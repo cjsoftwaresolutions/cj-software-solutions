@@ -249,7 +249,7 @@ class _ContactPageState extends State<ContactPage>
                         ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Text("Sbi mangamma thota road, Siddipet"),
+                          child: Text("Near Muthyala Pochamma temple nehru park, Siddipet, 502103"),
                         )
                       ],
                     ),

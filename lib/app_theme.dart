@@ -28,7 +28,7 @@ class AppTheme {
       ),
       scaffoldBackgroundColor: colorScheme.background,
       highlightColor: Colors.transparent,
-      accentColor: colorScheme.primary,
+      hintColor: colorScheme.primary,
       focusColor: AppColors.primaryColor,
       visualDensity: VisualDensity.adaptivePlatformDensity,
     );

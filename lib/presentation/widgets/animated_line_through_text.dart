@@ -157,52 +157,14 @@ class _AnimatedLineThroughTextState extends State<AnimatedLineThroughText>
                       text: widget.text,
                       maxLines: widget.maxLines,
                       width: widget.width,
-                      coverColor: widget.slideBoxCoverColor,
-                      boxColor: widget.slideBoxColor,
-                      textStyle: _isHovering
-                          ? hoverTextStyle?.copyWith(
-                              decoration: widget.isUnderlinedOnHover
-                                  ? TextDecoration.underline
-                                  : TextDecoration.none,
-                            )
-                          : widget.textStyle?.copyWith(
-                              decoration: widget.isUnderlinedByDefault
-                                  ? TextDecoration.underline
-                                  : TextDecoration.none,
-                            ),
+                      boxColor: widget.slideBoxColor, textStyle: null,
                     )
                   : Empty(),
-              Positioned(
-                top: (textHeight / 2) - widget.lineThickness,
-                child: Container(
-                  height: widget.lineThickness,
-                  color: widget.hoverColor,
-                  width: forwardAnimation.value,
-                ),
-              ),
-              Positioned(
-                top: (textHeight / 2) - widget.lineThickness,
-                child: Container(
-                  height: widget.lineThickness,
-                  color: widget.coverColor,
-                  width: backwardsAnimation.value,
-                ),
-              ),
               widget.hasSlideBoxAnimation
                   ? Empty()
                   : Text(
                       widget.text,
-                      style: _isHovering
-                          ? hoverTextStyle?.copyWith(
-                              decoration: widget.isUnderlinedOnHover
-                                  ? TextDecoration.underline
-                                  : TextDecoration.none,
-                            )
-                          : widget.textStyle?.copyWith(
-                              decoration: widget.isUnderlinedByDefault
-                                  ? TextDecoration.underline
-                                  : TextDecoration.none,
-                            ),
+                style: TextStyle(color: Colors.blue),
                     ),
             ],
           ),

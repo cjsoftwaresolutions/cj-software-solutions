@@ -34,7 +34,7 @@ class StringConst {
   static const String VIEW_ALL_PROJECTS = "view all projects";
 
   // Contact Page
-  static const String GET_IN_TOUCH = "Contact Us";
+  static const String GET_IN_TOUCH = "Contact us";
   static const String Address = "Address";
   static const String CONTACT_MSG =
       "Hey There, Got a project, job offer or consulting work for me? Feel free to contact me ASAP.";
@@ -72,12 +72,17 @@ class StringConst {
   static const String ABOUT_DEV_STORY = "About";
   static const String ABOUT_DEV_STORY_TITLE = "A little bit about company.";
   static const String ABOUT_DEV_STORY_CONTENT_1 =
-      "Cj Software Solutions  is a company of passionate mobile app developers, app designers, and UI/UX experts who Transform Incredible Ideas into Amazing Apps. CJ Software Solutions caters to multiple domains using Software Solutions.";
+      "CJ Software Solutions is an IT service provider company. We specialize in Mobile and Web development and are dedicated to delivering exceptional products/services to our clients. With a team of experienced professionals, we strive to provide innovative solutions that meet the unique needs of our clients and help them achieve their goals.";
 
   static const String ABOUT_DEV_STORY_CONTENT_2 =
-      "The products we design and build are simple, clean, and suitable for a wide variety of users with extensive research into the market.Our comprehensive range of capabilities, including marketing, design, engineering, and emerging technologies, enables us to help our customers and build future-ready and sustainable products.";
+      "Our Vision:\n"
+      "At CJ Software Solutions our vision is to be a trusted and innovative IT service provider that empowers businesses to succeed in the digital era. We envision a future where technology solutions are seamlessly integrated into organizations, enabling them to enhance productivity, drive growth, and create exceptional customer experiences.";
   static const String ABOUT_DEV_STORY_CONTENT_3 =
-      "I am very great at finding solutions to problems and I have a very keen eye for details. I enjoy building fun/useful projects in my free time and open sourcing them. I am an avid reader, lover of all forms art & music, a big fan of poetry & I love travelling.";
+      "Our vision encompasses:\n"
+      "1.Client Success\n"
+      "2.Innovation and Adaptability\n"
+      "3,Exceptional Service\n"
+      "4.Thought Leadership";
   static const String ABOUT_DEV_TECHNOLOGY = "Technology";
   static const String MOBILE_TECH = "Mobile Technologies";
   static const String OTHER_TECH = "Web / Cloud / Design Technologies";
@@ -352,7 +357,7 @@ class StringConst {
 
   static const String Shramic_Sandhan = "Shramic Sandhan";
   static const String DISNEY_PLUS_PLATFORM = "Android / Ios.";
-  static const String DISNEY_PLUS_CATEGORY = "Own Company product";
+  static const String DISNEY_PLUS_CATEGORY = "Shramic Sandhan Construction service Provider App";
   static const String DISNEY_PLUS_SUBTITLE = "Disney+, But Better";
   static const String DISNEY_PLUS_DETAIL =
       "Disney Plus is an amazing UI Kit  designed by Andre Carioca. He describes the UI Kit as his attempt of making the current disney plus app better. For me, this project is my attempt at learning and playing with Jetpack Compose. It contains everything that I am learning about the current state of native android development with Kotlin & Jetpack Compose";
@@ -363,7 +368,7 @@ class StringConst {
   static const String Integrated_market = "Integrated Market Siddipet";
   static const String FLUTTER_CATALOG_PLATFORM = "Android / IOS.";
   static const String FLUTTER_CATALOG_CATEGORY =
-      "Siddpet Integrated Market App";
+      "Instant Grocery and Non Veg items delivery";
   static const String FLUTTER_CATALOG_SUBTITLE =
       "A beautiful catalog of login designs";
   static const String FLUTTER_CATALOG_DETAIL =

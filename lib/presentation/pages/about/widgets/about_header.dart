@@ -109,7 +109,7 @@ class AboutDescription extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        AnimatedTextSlideBoxTransition(
+      /*  AnimatedTextSlideBoxTransition(
           controller: controller,
           text: StringConst.ABOUT_DEV_CATCH_LINE_1,
           width: width,
@@ -141,7 +141,7 @@ class AboutDescription extends StatelessWidget {
           width: width,
           maxLines: 10,
           textStyle: style,
-        ),
+        ),*/
       ],
     );
   }

@@ -189,66 +189,17 @@ class _AboutPageState extends State<AboutPage> with TickerProviderStateMixin {
                             text: StringConst.ABOUT_DEV_STORY_CONTENT_2,
                             textStyle: bodyText1Style,
                           ),
-                        /*   AnimatedPositionedText(
+                           AnimatedPositionedText(
                             controller: _storySectionAnimation,
                             width: widthOfBody,
                             maxLines: 30,
                             text: StringConst.ABOUT_DEV_STORY_CONTENT_3,
                             textStyle: bodyText1Style,
-                          ),*/
-                        ],
-                      ),
-                    ),
-                  ),
-                  /*CustomSpacer(heightFactor: 0.1),
-                  VisibilityDetector(
-                    key: Key('technology-section'),
-                    onVisibilityChanged: (visibilityInfo) {
-                      double visiblePercentage =
-                          visibilityInfo.visibleFraction * 100;
-                      if (visiblePercentage > 50) {
-                        _technologyController.forward();
-                      }
-                    },
-                    child: ContentBuilder(
-                      controller: _technologyController,
-                      number: "/02 ",
-                      width: contentAreaWidth,
-                      section: StringConst.ABOUT_DEV_TECHNOLOGY.toUpperCase(),
-                      title: StringConst.ABOUT_DEV_TECHNOLOGY_TITLE,
-                      body: Column(
-                        children: [
-                          AnimatedPositionedText(
-                            controller: _technologySectionAnimation,
-                            width: widthOfBody,
-                            maxLines: 12,
-                            text: StringConst.ABOUT_DEV_TECHNOLOGY_CONTENT,
-                            textStyle: bodyText1Style,
                           ),
                         ],
                       ),
-                      footer: VisibilityDetector(
-                        key: Key('technology-list'),
-                        onVisibilityChanged: (visibilityInfo) {
-                          double visiblePercentage =
-                              visibilityInfo.visibleFraction * 100;
-                          if (visiblePercentage > 60) {
-                            _technologyListController.forward();
-                          }
-                        },
-                        child: Column(
-                          children: [
-                            SpaceH40(),
-                            TechnologySection(
-                              width: contentAreaWidth,
-                              controller: _technologyListController,
-                            ),
-                          ],
-                        ),
-                      ),
                     ),
                   ),
-                  CustomSpacer(heightFactor: 0.1),*/
                   VisibilityDetector(
                     key: Key('contact-section'),
                     onVisibilityChanged: (visibilityInfo) {

@@ -113,7 +113,6 @@ class _AnimatedFooterState extends State<AnimatedFooter>
                   Center(
                     child: AnimatedPositionedText(
                       text: StringConst.WORK_TOGETHER,
-                     
                       textAlign: TextAlign.center,
                       textStyle: titleStyle,
                       controller: CurvedAnimation(

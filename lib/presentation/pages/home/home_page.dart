@@ -96,13 +96,13 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       hasSideTitle: false,
       hasUnveilPageAnimation: _arguments.showUnVeilPageAnimation,
       onLoadingAnimationDone: () {
-        _slideTextController.forward();
+        _slideTextController.fling();
       },
       customLoadingAnimation: LoadingHomePageAnimation(
         text: StringConst.DEV_NAME,
         style: textTheme.headline4!.copyWith(color: AppColors.white),
         onLoadingDone: () {
-          _slideTextController.forward();
+          _slideTextController.fling();
         },
       ),
       child: ListView(
@@ -117,50 +117,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             controller: _slideTextController,
             scrollToWorksKey: key,
           ),
-          /*VisibilityDetector(
-            key: Key('recent-projects'),
-            onVisibilityChanged: (visibilityInfo) {
-              double visiblePercentage = visibilityInfo.visibleFraction * 100;
-              if (visiblePercentage > 45) {
-                _recentWorksController.forward();
-              }
-            },
-            child: Container(
-              key: key,
-              margin: margin,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  *//*AnimatedTextSlideBoxTransition(
-                    controller: _recentWorksController,
-                    text: StringConst.CRAFTED_WITH_LOVE,
-                    textStyle: textTheme.headline4?.copyWith(
-                      color: AppColors.black,
-                      fontSize: responsiveSize(context, 30, 48, md: 40, sm: 36),
-                      height: 2.0,
-                    ),
-                  ),*//*
-                 *//* SpaceH16(),
-                  AnimatedPositionedText(
-                    controller: CurvedAnimation(
-                      parent: _recentWorksController,
-                      curve: Interval(0.6, 1.0, curve: Curves.fastOutSlowIn),
-                    ),
-                    text: StringConst.SELECTION,
-                    textStyle: textTheme.bodyText1?.copyWith(
-                      fontSize: responsiveSize(
-                        context,
-                        Sizes.TEXT_SIZE_16,
-                        Sizes.TEXT_SIZE_18,
-                      ),
-                      height: 2,
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),*//*
-                ],
-              ),
-            ),
-          ),*/
           Container(
             margin: margin,
             child: Column(

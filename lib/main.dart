@@ -3,6 +3,7 @@ import 'package:cj_software_solutions/injection_container.dart';
 import 'package:cj_software_solutions/presentation/pages/about/about_page.dart';
 import 'package:cj_software_solutions/presentation/pages/contact_page.dart';
 import 'package:cj_software_solutions/presentation/pages/home/home_page.dart';
+import 'package:cj_software_solutions/presentation/pages/works/works_page.dart';
 import 'package:cj_software_solutions/presentation/routes/routes.dart';
 import 'package:cj_software_solutions/values/values.dart';
 import 'package:flutter/material.dart';
@@ -45,7 +46,7 @@ class Aerium extends StatelessWidget {
           '/': (context) => HomePage(),
           '/about': (context) => const AboutPage(),
           '/contact': (context) => const ContactPage(),
-          '/works': (context) => const AboutPage(),
+          '/works': (context) => const WorksPage(),
         },
         onGenerateRoute: RouteConfiguration.onGenerateRoute,
       ),

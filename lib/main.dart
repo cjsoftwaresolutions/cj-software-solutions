@@ -37,7 +37,6 @@ class Aerium extends StatelessWidget {
   Widget build(BuildContext context) {
     return Layout(
       child: MaterialApp(
-        title: StringConst.APP_TITLE,
         color: Colors.blue,
         theme: AppTheme.lightThemeData,
         debugShowCheckedModeBanner: false,

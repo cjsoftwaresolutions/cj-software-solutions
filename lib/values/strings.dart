@@ -75,10 +75,8 @@ class StringConst {
       "CJ Software Solutions is an IT service provider company. We specialize in Mobile and Web development and are dedicated to delivering exceptional products/services to our clients. With a team of experienced professionals, we strive to provide innovative solutions that meet the unique needs of our clients and help them achieve their goals.";
 
   static const String ABOUT_DEV_STORY_CONTENT_2 =
-      "Our Vision:\n"
       "At CJ Software Solutions our vision is to be a trusted and innovative IT service provider that empowers businesses to succeed in the digital era. We envision a future where technology solutions are seamlessly integrated into organizations, enabling them to enhance productivity, drive growth, and create exceptional customer experiences.";
   static const String ABOUT_DEV_STORY_CONTENT_3 =
-      "Our vision encompasses:\n"
       "1.Client Success\n"
       "2.Innovation and Adaptability\n"
       "3,Exceptional Service\n"

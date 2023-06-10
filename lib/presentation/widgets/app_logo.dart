@@ -17,13 +17,26 @@ class AppLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TextTheme textTheme = Theme.of(context).textTheme;
-    return Text(
+    return Column(
+      children: [
+      Text(
       title,
       style: titleStyle ??
           textTheme.headline2?.copyWith(
-            color: titleColor,
+            color: Colors.orange,
             fontSize: fontSize,
           ),
+    ),
+        SizedBox(
+          height: 20,
+        ),
+        Row(
+          children: [
+            Text('Transform Innovative ideas into Mobile & Web Reality',style: TextStyle(fontWeight: FontWeight.bold),),
+            Icon(Icons.favorite,color: Colors.pink,)
+          ],
+        )
+      ],
     );
   }
 }

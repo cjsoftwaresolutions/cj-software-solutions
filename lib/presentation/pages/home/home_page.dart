@@ -89,88 +89,90 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         sm: assignWidth(context, 0.15),
       ),
     );
-    return PageWrapper(
-      selectedRoute: HomePage.homePageRoute,
-      selectedPageName: StringConst.HOME,
-      navBarAnimationController: _slideTextController,
-      hasSideTitle: false,
-      hasUnveilPageAnimation: _arguments.showUnVeilPageAnimation,
-      onLoadingAnimationDone: () {
-        _slideTextController.fling();
-      },
-      customLoadingAnimation: LoadingHomePageAnimation(
-        text: StringConst.DEV_NAME,
-        style: textTheme.headline4!.copyWith(color: AppColors.white),
-        onLoadingDone: () {
+    return Scaffold(
+      body: PageWrapper(
+        selectedRoute: HomePage.homePageRoute,
+        selectedPageName: StringConst.HOME,
+        navBarAnimationController: _slideTextController,
+        hasSideTitle: false,
+        hasUnveilPageAnimation: _arguments.showUnVeilPageAnimation,
+        onLoadingAnimationDone: () {
           _slideTextController.fling();
         },
-      ),
-      child: ListView(
-        padding: EdgeInsets.zero,
-        controller: _scrollController,
-        physics: const BouncingScrollPhysics(
-          parent: AlwaysScrollableScrollPhysics(),
+        customLoadingAnimation: LoadingHomePageAnimation(
+          text: StringConst.DEV_NAME,
+          style: textTheme.headline4!.copyWith(color: AppColors.white),
+          onLoadingDone: () {
+            _slideTextController.fling();
+          },
         ),
-        children: [
-          
-          HomePageHeader(
-            controller: _slideTextController,
-            scrollToWorksKey: key,
+        child: ListView(
+          padding: EdgeInsets.zero,
+          controller: _scrollController,
+          physics: const BouncingScrollPhysics(
+            parent: AlwaysScrollableScrollPhysics(),
           ),
-          Container(
-            margin: margin,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  StringConst.THERES_MORE.toUpperCase(),
-                  style: textTheme.bodyText1?.copyWith(
-                    fontSize: responsiveSize(context, 11, Sizes.TEXT_SIZE_12),
-                    letterSpacing: 2,
-                    fontWeight: FontWeight.w300,
+          children: [
+
+            HomePageHeader(
+              controller: _slideTextController,
+              scrollToWorksKey: key,
+            ),
+            Container(
+              margin: margin,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    StringConst.THERES_MORE.toUpperCase(),
+                    style: textTheme.bodyText1?.copyWith(
+                      fontSize: responsiveSize(context, 11, Sizes.TEXT_SIZE_12),
+                      letterSpacing: 2,
+                      fontWeight: FontWeight.w300,
+                    ),
                   ),
-                ),
-                SpaceH16(),
-                MouseRegion(
-                  onEnter: (e) => _viewProjectsController.forward(),
-                  onExit: (e) => _viewProjectsController.reverse(),
-                  child: AnimatedSlideTranstion(
-                    controller: _viewProjectsController,
-                    beginOffset: Offset(0, 0),
-                    targetOffset: Offset(0.05, 0),
-                    child: TextButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, WorksPage.worksPageRoute);
-                      },
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            StringConst.VIEW_ALL_PROJECTS.toLowerCase(),
-                            style: textButtonStyle,
-                          ),
-                          SpaceW12(),
-                          Container(
-                            margin: EdgeInsets.only(
-                                top: textButtonStyle!.fontSize! / 2),
-                            child: Image.asset(
-                              ImagePath.ARROW_RIGHT,
-                              width: 25,
+                  SpaceH16(),
+                  MouseRegion(
+                    onEnter: (e) => _viewProjectsController.forward(),
+                    onExit: (e) => _viewProjectsController.reverse(),
+                    child: AnimatedSlideTranstion(
+                      controller: _viewProjectsController,
+                      beginOffset: Offset(0, 0),
+                      targetOffset: Offset(0.05, 0),
+                      child: TextButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, WorksPage.worksPageRoute);
+                        },
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              StringConst.VIEW_ALL_PROJECTS.toLowerCase(),
+                              style: textButtonStyle,
                             ),
-                          ),
-                        ],
+                            SpaceW12(),
+                            Container(
+                              margin: EdgeInsets.only(
+                                  top: textButtonStyle!.fontSize! / 2),
+                              child: Image.asset(
+                                ImagePath.ARROW_RIGHT,
+                                width: 25,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          CustomSpacer(heightFactor: 0.15),
-          AnimatedFooter(),
-        ],
+            CustomSpacer(heightFactor: 0.15),
+            AnimatedFooter(),
+          ],
+        ),
       ),
     );
   }

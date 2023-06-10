@@ -6,6 +6,7 @@ import 'package:cj_software_solutions/presentation/widgets/animated_bubble_butto
 import 'package:cj_software_solutions/presentation/widgets/animated_positioned_widget.dart';
 import 'package:cj_software_solutions/presentation/widgets/animated_slide_transtion.dart';
 import 'package:cj_software_solutions/presentation/widgets/animated_text_slide_box_transition.dart';
+import 'package:cj_software_solutions/presentation/widgets/custom_spacer.dart';
 import 'package:cj_software_solutions/presentation/widgets/spaces.dart';
 import 'package:cj_software_solutions/values/values.dart';
 import 'package:flutter/material.dart';
@@ -124,7 +125,7 @@ class _HomePageHeaderState extends State<HomePageHeader>
     );
 
     return Container(
-      width: screenWidth,
+      width: MediaQuery.of(context).size.width,
       color: AppColors.accentColor2.withOpacity(0.35),
       child: Stack(
         children: [
@@ -177,44 +178,47 @@ class _HomePageHeaderState extends State<HomePageHeader>
                 ],
               );
             } else {
-              return Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    margin: textMargin,
-                    child: Container(
-                      width: screenWidth * 0.40,
-                      child: AboutDev(
-                        controller: widget.controller,
+              return SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      margin: textMargin,
+                      child: Container(
                         width: screenWidth * 0.40,
+                        child: AboutDev(
+                          controller: widget.controller,
+                          width: screenWidth * 0.40,
+                        ),
                       ),
                     ),
-                  ),
-                  SizedBox(width: screenWidth * 0.05),
-                  Container(
-                    margin: imageMargin,
-                    child: AnimatedSlideTranstion(
-                      controller: controller,
-                      position: animation,
-                      child: Stack(
-                        children: [
-                          Image.asset('assets/cjlogo.png')
-                        /*  RotationTransition(
-                            turns: rotationController,
-                            child: Image.asset(
-                              ImagePath.DEV_SKILLS_2,
+                    SizedBox(width: screenWidth * 0.05),
+                    Container(
+                      margin: imageMargin,
+                      child: AnimatedSlideTranstion(
+                        controller: controller,
+                        position: animation,
+                        child: Stack(
+                          children: [
+                            Image.asset('assets/cjlogo.png')
+                          /*  RotationTransition(
+                              turns: rotationController,
+                              child: Image.asset(
+                                ImagePath.DEV_SKILLS_2,
+                                width: screenWidth * 0.35,
+                              ),
+                            ),*/
+                           /* Image.asset(
+                              ImagePath.DEV_MEDITATE,
                               width: screenWidth * 0.35,
-                            ),
-                          ),*/
-                         /* Image.asset(
-                            ImagePath.DEV_MEDITATE,
-                            width: screenWidth * 0.35,
-                          ),*/
-                        ],
+                            ),*/
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               );
             }
           }),
@@ -306,61 +310,58 @@ class _AboutDevState extends State<AboutDev> {
       curve: Interval(0.6, 1.0, curve: Curves.fastOutSlowIn),
     );
     double headerFontSize = responsiveSize(context, 28, 48, md: 36, sm: 32);
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              margin: margin,
-              child: AnimatedTextSlideBoxTransition(
-                controller: widget.controller,
-                text: StringConst.HI,
-                width: widget.width,
-                maxLines: 3,
-                textStyle: textTheme.headline2?.copyWith(
-                  color: AppColors.black,
-                  fontSize: 16,
-                ),
-              ),
+        Container(
+          margin: margin,
+          child: AnimatedTextSlideBoxTransition(
+            controller: widget.controller,
+            text: StringConst.HI,
+            width: widget.width,
+            maxLines: 3,
+            textStyle: textTheme.headline2?.copyWith(
+              color: AppColors.black,
+              fontSize: 22,
             ),
-            SpaceH12(),
-            Container(
-              margin: margin,
-              child: AnimatedTextSlideBoxTransition(
-                controller: widget.controller,
-                text: StringConst.DEV_INTRO,
-                width: widget.width,
-                maxLines: 3,
-                textStyle: textTheme.headline2?.copyWith(
-                  color: AppColors.black,
-                  fontSize: 22,
-                ),
-              ),
+          ),
+        ),
+        CustomSpacer(heightFactor: 0.08),
+        Container(
+          margin: margin,
+          child: AnimatedTextSlideBoxTransition(
+            controller: widget.controller,
+            text: StringConst.DEV_INTRO,
+            width: widget.width,
+            maxLines: 3,
+            textStyle: textTheme.headline2?.copyWith(
+              color: AppColors.black,
+              fontSize: 22,
             ),
-            SpaceH12(),
-            Container(
-              margin: margin,
-              child: AnimatedTextSlideBoxTransition(
-                controller: widget.controller,
-                text: StringConst.DEV_TITLE,
-                width: responsiveSize(
-                  context,
-                  widget.width * 0.75,
-                  widget.width,
-                  md: widget.width,
-                  sm: widget.width,
-                ),
-                maxLines: 3,
-                textStyle: textTheme.headline2?.copyWith(
-                  color: Colors.blue,
-                  fontSize: headerFontSize,
-                ),
-              ),
+          ),
+        ),
+        CustomSpacer(heightFactor: 0.08),
+        Container(
+          margin: margin,
+          child: AnimatedTextSlideBoxTransition(
+            controller: widget.controller,
+            text: StringConst.DEV_TITLE,
+            width: responsiveSize(
+              context,
+              widget.width * 0.75,
+              widget.width,
+              md: widget.width,
+              sm: widget.width,
             ),
-            SpaceH30(),
-            /*Container(
+            maxLines: 3,
+            textStyle: textTheme.headline2?.copyWith(
+              color: Colors.blue,
+              fontSize: headerFontSize,
+            ),
+          ),
+        ),
+        CustomSpacer(heightFactor: 0.08),
+        /*Container(
               margin: margin,
               child: AnimatedPositionedText(
                 controller: curvedAnimation,
@@ -380,37 +381,37 @@ class _AboutDevState extends State<AboutDev> {
               ),
             ),
             SpaceH30(),*/
-            AnimatedPositionedWidget(
-              controller: curvedAnimation,
-              width: 200,
-              height: 60,
-              child: AnimatedBubbleButton(
-                color: AppColors.grey100,
-                imageColor: AppColors.black,
-                startOffset: Offset(0, 0),
-                targetOffset: Offset(0.1, 0),
-                targetWidth: 200,
-                startBorderRadius: const BorderRadius.all(
-                  Radius.circular(100.0),
-                ),
-                title: StringConst.SEE_MY_WORKS.toUpperCase(),
-                titleStyle: textTheme.bodyText1?.copyWith(
-                  color: AppColors.black,
-                  fontSize: responsiveSize(
-                    context,
-                    Sizes.TEXT_SIZE_14,
-                    Sizes.TEXT_SIZE_16,
-                    sm: Sizes.TEXT_SIZE_15,
-                  ),
-                  fontWeight: FontWeight.w500,
-                ),
-                onTap: () {
-                  Navigator.pushNamed(context, WorksPage.worksPageRoute);
-                },
-              ),
+        AnimatedPositionedWidget(
+          controller: curvedAnimation,
+          width: 200,
+          height: 60,
+          child: AnimatedBubbleButton(
+            color: AppColors.grey100,
+            imageColor: AppColors.black,
+            startOffset: Offset(0, 0),
+            targetOffset: Offset(0.1, 0),
+            targetWidth: 200,
+            startBorderRadius: const BorderRadius.all(
+              Radius.circular(100.0),
             ),
-            SpaceH40(),
-         /*   Container(
+            title: StringConst.SEE_MY_WORKS.toUpperCase(),
+            titleStyle: textTheme.bodyText1?.copyWith(
+              color: AppColors.black,
+              fontSize: responsiveSize(
+                context,
+                Sizes.TEXT_SIZE_14,
+                Sizes.TEXT_SIZE_16,
+                sm: Sizes.TEXT_SIZE_15,
+              ),
+              fontWeight: FontWeight.w500,
+            ),
+            onTap: () {
+              Navigator.pushNamed(context, WorksPage.worksPageRoute);
+            },
+          ),
+        ),
+        SpaceH40(),
+        /*   Container(
               margin: margin,
               child: Wrap(
                 spacing: 20,
@@ -421,11 +422,9 @@ class _AboutDevState extends State<AboutDev> {
                 ),
               ),
             )*/
-          ],
-        ),
-        SpaceH2(),
       ],
     );
+
   }
 
  /* List<Widget> _buildSocials({

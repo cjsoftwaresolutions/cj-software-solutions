@@ -182,6 +182,29 @@ class _AboutPageState extends State<AboutPage> with TickerProviderStateMixin {
                             text: StringConst.ABOUT_DEV_STORY_CONTENT_1,
                             textStyle: bodyText1Style,
                           ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  CustomSpacer(heightFactor: 0.01),
+                  VisibilityDetector(
+                    key: Key('about'),
+                    onVisibilityChanged: (visibilityInfo) {
+                      double visiblePercentage =
+                          visibilityInfo.visibleFraction * 100;
+                      if (visiblePercentage >
+                          responsiveSize(context, 40, 70, md: 50)) {
+                        _storyController.forward();
+                      }
+                    },
+                    child: ContentBuilder(
+                      controller: _storyController,
+                      number: "/01 ",
+                      width: contentAreaWidth,
+                      section: StringConst.ABOUT_DEV_STORY.toUpperCase(),
+                      title: 'Our Vision',
+                      body: Column(
+                        children: [
                           AnimatedPositionedText(
                             controller: _storySectionAnimation,
                             width: widthOfBody,
@@ -189,61 +212,35 @@ class _AboutPageState extends State<AboutPage> with TickerProviderStateMixin {
                             text: StringConst.ABOUT_DEV_STORY_CONTENT_2,
                             textStyle: bodyText1Style,
                           ),
-                           AnimatedPositionedText(
+                        ],
+                      ),
+                    ),
+                  ),
+                  CustomSpacer(heightFactor: 0.01),
+                  VisibilityDetector(
+                    key: Key('abt'),
+                    onVisibilityChanged: (visibilityInfo) {
+                      double visiblePercentage =
+                          visibilityInfo.visibleFraction * 100;
+                      if (visiblePercentage >
+                          responsiveSize(context, 40, 70, md: 50)) {
+                        _storyController.forward();
+                      }
+                    },
+                    child: ContentBuilder(
+                      controller: _storyController,
+                      number: "/01 ",
+                      width: contentAreaWidth,
+                      section: StringConst.ABOUT_DEV_STORY.toUpperCase(),
+                      title: 'Our vision encompasses',
+                      body: Column(
+                        children: [
+                          AnimatedPositionedText(
                             controller: _storySectionAnimation,
                             width: widthOfBody,
                             maxLines: 30,
                             text: StringConst.ABOUT_DEV_STORY_CONTENT_3,
                             textStyle: bodyText1Style,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  VisibilityDetector(
-                    key: Key('contact-section'),
-                    onVisibilityChanged: (visibilityInfo) {
-                      double visiblePercentage =
-                          visibilityInfo.visibleFraction * 100;
-                      if (visiblePercentage > 50) {
-                        _contactController.forward();
-                      }
-                    },
-                    child: ContentBuilder(
-                      controller: _contactController,
-                      number: "/03 ",
-                      width: contentAreaWidth,
-                      section: StringConst.ABOUT_DEV_CONTACT.toUpperCase(),
-                      //title: StringConst.ABOUT_DEV_CONTACT_SOCIAL,
-                      body: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                         /* SpaceH20(),
-                          Wrap(
-                            spacing: 20,
-                            runSpacing: 20,
-                            children: _buildSocials(Data.socialData2),
-                          ),*/
-                        ],
-                      ),
-                      footer: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SpaceH40(),
-                          AnimatedTextSlideBoxTransition(
-                            controller: _contactController,
-                            text: StringConst.ABOUT_DEV_CONTACT_EMAIL,
-                            textStyle: titleStyle,
-                          ),
-                          SpaceH40(),
-                          AnimatedLineThroughText(
-                            text: StringConst.DEV_EMAIL,
-                            hasSlideBoxAnimation: true,
-                            controller: _contactController,
-                            onTap: () {
-                              Functions.launchUrl(StringConst.EMAIL_URL);
-                            },
-                            textStyle: bodyText2Style,
                           ),
                         ],
                       ),

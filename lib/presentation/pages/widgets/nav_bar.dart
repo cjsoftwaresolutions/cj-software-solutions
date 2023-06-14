@@ -59,7 +59,7 @@ class NavBar extends StatelessWidget {
       ),
       child: Row(
         children: [
-          AppLogo(fontSize: Sizes.TEXT_SIZE_40, titleColor: appLogoColor,),
+          AppLogo(fontSize: Sizes.TEXT_SIZE_40, titleColor: appLogoColor,animationController: controller),
           Spacer(),
           InkWell(
             onTap: onMenuTap,
@@ -94,7 +94,7 @@ class NavBar extends StatelessWidget {
         children: [
           Row(
             children: [
-              AppLogo(titleColor: appLogoColor),
+              AppLogo(titleColor: appLogoColor,animationController: controller),
               Spacer(),
               ..._buildNavItems(context, menuList: Data.menuItems),
            /*   AeriumButton(

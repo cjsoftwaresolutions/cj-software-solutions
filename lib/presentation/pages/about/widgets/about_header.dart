@@ -43,15 +43,6 @@ class AboutHeader extends StatelessWidget {
                 width: widthOfScreen(context),
               ),
               SpaceH30(),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(80),
-                child: Image.asset(
-                  ImagePath.DEV,
-                  fit: BoxFit.cover,
-                  width: widthOfScreen(context),
-                  height: assignHeight(context, 0.45),
-                ),
-              ),
             ],
           );
         } else {

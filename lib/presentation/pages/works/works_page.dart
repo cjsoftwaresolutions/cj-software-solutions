@@ -70,7 +70,7 @@ class _WorksPageState extends State<WorksPage> with TickerProviderStateMixin {
             builder: (context, sizingInformation) {
               double screenWidth = sizingInformation.screenSize.width;
 
-              if (screenWidth <= RefinedBreakpoints().tabletSmall) {
+              if (screenWidth <= RefinedBreakpoints().mobileSmall) {
                 return Column(
                   children: _buildProjectsForMobile(
                     data: Data.projects,
@@ -125,6 +125,7 @@ class _WorksPageState extends State<WorksPage> with TickerProviderStateMixin {
             subheight: subHeight.toDouble(),
             title: data[index].title.toLowerCase(),
             subtitle: data[index].category,
+            subtitleStyle: TextStyle(fontSize: 12),
           ),
         ),
       );
@@ -147,6 +148,7 @@ class _WorksPageState extends State<WorksPage> with TickerProviderStateMixin {
             projectNumber: index + 1 > 9 ? "${index + 1}" : "0${index + 1}",
             title: data[index].title.toLowerCase(),
             subtitle: data[index].category,
+            subtitleStyle: TextStyle(fontSize: 12),
           ),
         ),
       );

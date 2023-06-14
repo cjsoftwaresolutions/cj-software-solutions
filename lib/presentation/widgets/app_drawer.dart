@@ -103,6 +103,7 @@ class _AppDrawerState extends State<AppDrawer>
                         AppLogo(
                           fontSize: Sizes.TEXT_SIZE_40,
                           titleColor: AppColors.accentColor,
+                          animationController: widget.controller,
                         ),
                         Spacer(),
                         InkWell(

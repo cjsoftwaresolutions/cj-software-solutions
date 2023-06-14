@@ -199,9 +199,9 @@ class _AboutPageState extends State<AboutPage> with TickerProviderStateMixin {
                     },
                     child: ContentBuilder(
                       controller: _storyController,
-                      number: "/01 ",
+                      number: "/02 ",
                       width: contentAreaWidth,
-                      section: StringConst.ABOUT_DEV_STORY.toUpperCase(),
+                      section: 'Our Vision'.toUpperCase(),
                       title: 'Our Vision',
                       body: Column(
                         children: [
@@ -229,9 +229,9 @@ class _AboutPageState extends State<AboutPage> with TickerProviderStateMixin {
                     },
                     child: ContentBuilder(
                       controller: _storyController,
-                      number: "/01 ",
+                      number: "/03 ",
                       width: contentAreaWidth,
-                      section: StringConst.ABOUT_DEV_STORY.toUpperCase(),
+                      section: 'Our vision encompasses'.toUpperCase(),
                       title: 'Our vision encompasses',
                       body: Column(
                         children: [

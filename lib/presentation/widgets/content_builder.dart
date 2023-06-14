@@ -13,7 +13,7 @@ class ContentBuilder extends StatelessWidget {
     Key? key,
     required this.width,
     required this.number,
-    required this.section,
+     this.section,
     required this.body,
     required this.controller,
     this.title = '',
@@ -27,7 +27,7 @@ class ContentBuilder extends StatelessWidget {
   final double width;
   final AnimationController controller;
   final String number;
-  final String section;
+  final String? section;
   final String? title;
   final TextStyle? numberStyle;
   final TextStyle? sectionStyle;
@@ -79,7 +79,7 @@ class ContentBuilder extends StatelessWidget {
                       SpaceW8(),
                       AnimatedTextSlideBoxTransition(
                         controller: controller,
-                        text: section,
+                        text: section.toString(),
                         textStyle: sectionStyle ?? defaultSectionStyle,
                       ),
                     ],
@@ -115,7 +115,7 @@ class ContentBuilder extends StatelessWidget {
                       Expanded(
                         child:  AnimatedTextSlideBoxTransition(
                         controller: controller,
-                        text: section,
+                        text: section.toString(),
                         textStyle: sectionStyle ?? defaultSectionStyle,
                       ),
                       ),
